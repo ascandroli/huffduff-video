@@ -136,18 +136,16 @@ EOF
 crontab crontab
 ```
 
-## running it locally using Docker
+## Running it locally using Docker
 
 * You will have to provide your own Backblaze bucket, key id and app key.
-* Copy `.env.example` to `.env` and fill it in with your data
-    ```
-    cp .env.example .env
-    ```
-* run it: 
+    * Create two files `b2_app_key` and `b2_key_id` and copy your credentials there.
+    * Change the value of `B2_BUCKET` in the `app.py` to point to your bucket.
+* Run it: 
     `docker-compose up`
-* open it: on http://localhost:8080
+* Open it on http://localhost:8080
   * nginx (frontend) is running on port 8080
-  * gunicorn (backend) will be running on the port specified in the `.env ` file
+  * gunicorn (backend) will be running on the port (8000) specified in the `docker-compose.yml ` file.
 
 ### Local development
 

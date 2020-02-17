@@ -11,10 +11,7 @@ services:
   gunicorn:
     build: .
     environment:
-      - WORKERS=${WORKERS}
-      - PORT=${PORT}
-      - B2_BUCKET=${B2_BUCKET}
-      - B2_APP_KEY=${B2_APP_KEY}
-      - B2_KEY_ID=${B2_KEY_ID}
+      - WORKERS=4
+      - PORT=8000
     ports:
-      - "${PORT}:${PORT}"
+      - "8000:8000"
